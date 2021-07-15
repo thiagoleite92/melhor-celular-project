@@ -1,12 +1,13 @@
 import React from 'react';
-import MelhorCelularProvider from './context/MelhorCelularProvider';
-import { Table } from './components';
+import { EditPage,MainPage } from './pages';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <MelhorCelularProvider>
-      <Table /> 
-    </MelhorCelularProvider>
+    <Switch>
+      <Route exact path="/" component={ MainPage } />
+      <Route path="/edit" component={ EditPage } />
+    </Switch>
   );
 }
 
