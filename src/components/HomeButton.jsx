@@ -8,7 +8,8 @@ function HomeButton() {
     <button
       onClick={ () => history.push('/')}
     >
-      VOLTAR</button>
+      VOLTAR
+    </button>
   )
 }
 

@@ -25,8 +25,6 @@ function EditPhoneForm({ id }) {
       [name]: value,
     }))
   }
-
-  // console.log(phone)
   console.log(phone)
 
   if (phone.length === 0) {
