@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import HomeButton from './HomeButton';
+import SaveButton from './SaveButton';
 
 function EditPhoneForm({ id }) {
   const history = useHistory();
@@ -83,10 +85,8 @@ function EditPhoneForm({ id }) {
             name="endDate" />
         </label>
       </form>
-      <div>
-        <button>voltar</button>
-        <button>salvar</button>
-      </div>
+      <HomeButton />
+      <SaveButton />
     </>
   )
 }
