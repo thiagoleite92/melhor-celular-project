@@ -3,8 +3,6 @@ import { TableBody, TableHeader, AddButton } from './index';
 
 function Table() {
 
-
-
   return (
    <section> 
     <div>

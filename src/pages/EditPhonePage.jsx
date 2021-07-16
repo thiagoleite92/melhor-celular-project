@@ -1,8 +1,14 @@
 import React from 'react';
+import { useParams } from 'react-router';
+import { EditPhoneForm } from '../components/'
 
 function EditPage() {
+  const params = useParams()
+  const { id } = params;
+
+
   return (
-    <div>...</div>
+    <EditPhoneForm id={ id } />
   )
 }
 

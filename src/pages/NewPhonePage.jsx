@@ -1,8 +1,11 @@
 import React from 'react'
+import { EditPhoneForm } from '../components/'
 
 function NewPhonePage() {
   return (
-    <div>...</div>
+    <>
+      <EditPhoneForm />
+    </>
   )
 }
 
