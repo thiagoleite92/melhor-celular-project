@@ -6,7 +6,7 @@ function App() {
   return (
     <Switch>
       <Route exact path="/" component={ MainPage } />
-      <Route path="/edit" component={ EditPage } />
+      <Route path="/edit/:id" component={ EditPage } />
     </Switch>
   );
 }

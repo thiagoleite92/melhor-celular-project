@@ -1,3 +1,4 @@
+import React from 'react';
 import { TableBody, TableHeader, AddButton } from './index';
 
 function Table() {

@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MelhorCelularContext from '../context/MelhorCelularContext';
 import { DeleteButton, EditButton } from './index';
 
-function renderTableBody(phoneList) {
+function renderTableBody(phoneList) { 
   return (
     <tbody>
       {
-        phoneList.map(({ code, model, price, brand, color }, key) =>
+        phoneList.map(({ code, model, price, brand, color, _id }, key) =>
         (
           <tr key={ key }>
             <td>{code}</td>
@@ -18,8 +18,8 @@ function renderTableBody(phoneList) {
               : <td>{brand}</td>
             }
             <td>{color.replace('LACK', 'lack')}</td>
-            <td><EditButton /></td>
-            <td><DeleteButton /></td>
+            <td><EditButton id={ _id } /></td>
+            <td><DeleteButton id={ _id } /></td>
           </tr>
         )
         )

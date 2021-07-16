@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router';
 import { MdEdit } from 'react-icons/all'
-import { Redirect } from 'react-router-dom';
 
-function EditButton() {
-  const [redirect, setRedirect] = useState(false)
-
-  const handleRedirect = () => {
-    setRedirect(true);
-  }
-
-  if(redirect) {
-    return (<Redirect to="/edit" />)
-  }
+function EditButton({ id }) {
+  const history = useHistory();  
 
   return (
-    <button onClick={ handleRedirect }>
+    <button onClick={ () => history.push(`/edit/${ id }`) }>
       <MdEdit />
     </button>
   )
