@@ -5,15 +5,15 @@ import HomeButton from './HomeButton';
 import SaveButton from './SaveButton';
 
 function EditPhoneForm({ id }) {
-  const history = useHistory();
-
   const [phone, setPhone] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchPhone = async () => {
       const endpoint = `https://phones--melhorcom.repl.co/phone/${id}`;
       const { data } = await axios.get(endpoint, {headers: { cpf: '04925787454'}});
       setPhone(data)
+      setIsLoading(false);
     }
     fetchPhone();
   }, [id])
@@ -27,8 +27,8 @@ function EditPhoneForm({ id }) {
   }
   console.log(phone)
 
-  if (phone.length === 0) {
-    return (<span>Carregando...</span>)
+  if (isLoading) {
+    return (<div>Carregando...</div>)
   }
 
   return (
@@ -83,8 +83,8 @@ function EditPhoneForm({ id }) {
             name="endDate" />
         </label>
       </form>
-      <HomeButton />
-      <SaveButton />
+      <HomeButton phone={ phone } />
+      <SaveButton phone={ phone } />
     </>
   )
 }

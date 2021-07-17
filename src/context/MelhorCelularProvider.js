@@ -19,8 +19,6 @@ function MelhorCelularProvider({ children }) {
     fetchPhoneList();
   }, [])
 
-  
-
   const toConsume = {
     phoneList,
     headers,
