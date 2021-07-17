@@ -2,6 +2,8 @@ import MelhorCelularContext from './MelhorCelularContext';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const myHeaders = {headers: { cpf: '04925787454'}}
+
 
 function MelhorCelularProvider({ children }) {
   const [phoneList, setPhoneList] = useState([]);
@@ -12,7 +14,7 @@ function MelhorCelularProvider({ children }) {
   useEffect(() => {
     const fetchPhoneList = async () => {
       const endpoint = 'https://phones--melhorcom.repl.co/phone';
-      const  { data } = await axios.get(endpoint, {headers: { cpf: '04925787454'}})
+      const  { data } = await axios.get(endpoint, myHeaders)
       setPhoneList(data)
       console.log(data)
     }
