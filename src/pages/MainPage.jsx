@@ -1,12 +1,15 @@
 import React from 'react';
 import MelhorCelularProvider from '../context/MelhorCelularProvider';
-import { Table } from '../components';
+import { Header, Table } from '../components';
 
 function MainPage() {
   return (
+    <>
+    <Header />
     <MelhorCelularProvider>
       <Table /> 
     </MelhorCelularProvider>
+    </>
   );
 }
 

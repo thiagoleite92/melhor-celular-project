@@ -6,4 +6,5 @@ export { default as DeleteButton } from './DeleteButton'
 export { default as EditButton } from './EditButton';
 export { default as EditPhoneForm } from './EditPhoneForm';
 export { default as HomeButton } from './HomeButton';
-export  { default as SaveButton } from './SaveButton';
+export { default as SaveButton } from './SaveButton';
+export { default as Header } from './Header';

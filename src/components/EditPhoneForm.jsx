@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import HomeButton from './HomeButton';
 import SaveButton from './SaveButton';
 
@@ -25,7 +24,6 @@ function EditPhoneForm({ id }) {
       [name]: value,
     }))
   }
-  console.log(phone)
 
   if (isLoading) {
     return (<div>Carregando...</div>)
@@ -38,7 +36,7 @@ function EditPhoneForm({ id }) {
           Modelo
           <input
             type="text"
-            value={ phone.model }
+            value={ phone.model || '' }
             onChange={  handleChange }
             name="model" />
         </label>
@@ -46,7 +44,7 @@ function EditPhoneForm({ id }) {
           Marca
           <input
             type="text"
-            value={ phone.brand }
+            value={ phone.brand || ''  }
             onChange={ handleChange }
             name="brand" />
         </label>
@@ -54,7 +52,7 @@ function EditPhoneForm({ id }) {
           Cor
           <input 
             type="text"
-            value={ phone.color }
+            value={ phone.color || ''  }
             onChange={ handleChange }
             name="color" />
         </label>
@@ -62,7 +60,7 @@ function EditPhoneForm({ id }) {
           Preço
           <input 
             type="text"
-            value={ phone.price }
+            value={ phone.price || ''  }
             onChange={ handleChange }
             name="price" />
         </label>
@@ -70,7 +68,7 @@ function EditPhoneForm({ id }) {
           Ínicio das vendas
           <input 
             type="text"
-            value={ phone.date }
+            value={ phone.date || ''  }
             onChange={ handleChange }
             name="date" />
         </label>
@@ -78,13 +76,13 @@ function EditPhoneForm({ id }) {
           Fim das vendas
           <input 
             type="text"
-            value={ phone.endDate }
+            value={ phone.endDate || ''  }
             onChange={ handleChange }
             name="endDate" />
         </label>
       </form>
       <HomeButton phone={ phone } />
-      <SaveButton phone={ phone } />
+      <SaveButton phone={ phone } id={ id } />
     </>
   )
 }
